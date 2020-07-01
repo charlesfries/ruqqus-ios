@@ -380,15 +380,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Ruqqus/Preview Content\"";
-				DEVELOPMENT_TEAM = 48386QZ38R;
+				DEVELOPMENT_TEAM = CJ8229TM69;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Ruqqus/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = es.charlesfri.Ruqqus;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ruqqus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -401,15 +401,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Ruqqus/Preview Content\"";
-				DEVELOPMENT_TEAM = 48386QZ38R;
+				DEVELOPMENT_TEAM = CJ8229TM69;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Ruqqus/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = es.charlesfri.Ruqqus;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ruqqus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
