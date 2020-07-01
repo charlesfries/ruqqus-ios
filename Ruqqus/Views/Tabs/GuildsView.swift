@@ -21,6 +21,10 @@ struct GuildsView: View {
     var body: some View {
         NavigationView {
             
+            if fetch.loading {
+                ProgressView()
+            }
+            
             List {
                 Section(header: Text("Feeds")) {
                     ForEach(feeds) { feed in
@@ -46,8 +50,11 @@ struct GuildsView: View {
 
 class FetchGuilds: ObservableObject {
     @Published var guilds = [Guild]()
+    @Published var loading = false
      
     init() {
+        self.loading = true
+        
         // TODO:
         let json = """
         [
@@ -66,8 +73,9 @@ class FetchGuilds: ObservableObject {
         
         do {
             let decodedData = try JSONDecoder().decode([Guild].self, from: Data(json.utf8))
-            DispatchQueue.main.async {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { // TODO:
                 self.guilds = decodedData
+                self.loading = false
             }
         } catch {
             print(error)

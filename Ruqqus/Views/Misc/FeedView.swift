@@ -13,9 +13,9 @@ struct FeedView: View {
     
     // data
     let posts: [Post] = [
-        Post(guild: Guild(name: "test"), user: User(username: "charles"), score: 0, comments: 0, createdAt: "1d", previewURL: "https://b.thumbs.redditmedia.com/lmq9dOfhl7kVOkhETO3V4S8M0Ypuo9UORJ4dKTe5H_Y.jpg",title: "Post title #1", content: "Here is the content"),
-        Post(guild: Guild(name: "test"), user: User(username: "charles"), score: 0, comments: 0, createdAt: "1d", previewURL: "https://b.thumbs.redditmedia.com/lmq9dOfhl7kVOkhETO3V4S8M0Ypuo9UORJ4dKTe5H_Y.jpg",title: "Post title #2", content: "Here is the content"),
-        Post(guild: Guild(name: "test"), user: User(username: "charles"), score: 0, comments: 0, createdAt: "1d", previewURL: "https://b.thumbs.redditmedia.com/lmq9dOfhl7kVOkhETO3V4S8M0Ypuo9UORJ4dKTe5H_Y.jpg",title: "Post title #3", content: "Here is the content")
+//        Post(guild: Guild(name: "test"), user: User(username: "charles"), score: 0, comments: 0, createdAt: "1d", previewURL: "https://b.thumbs.redditmedia.com/lmq9dOfhl7kVOkhETO3V4S8M0Ypuo9UORJ4dKTe5H_Y.jpg",title: "Post title #1", content: "Here is the content"),
+//        Post(guild: Guild(name: "test"), user: User(username: "charles"), score: 0, comments: 0, createdAt: "1d", previewURL: "https://b.thumbs.redditmedia.com/lmq9dOfhl7kVOkhETO3V4S8M0Ypuo9UORJ4dKTe5H_Y.jpg",title: "Post title #2", content: "Here is the content"),
+//        Post(guild: Guild(name: "test"), user: User(username: "charles"), score: 0, comments: 0, createdAt: "1d", previewURL: "https://b.thumbs.redditmedia.com/lmq9dOfhl7kVOkhETO3V4S8M0Ypuo9UORJ4dKTe5H_Y.jpg",title: "Post title #3", content: "Here is the content")
     ]
     
     var body: some View {

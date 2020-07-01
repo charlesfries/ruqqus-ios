@@ -23,7 +23,8 @@ struct FeedPostRow: View {
                     Text(post.title)
                     HStack {
                         Button(action: {}) {
-                            Text(post.guild.name)
+//                            Text(post.guild.name)
+                            Text(post.guild)
                         }
                         Image(systemName: "arrow.up")
                         Text(String(post.score))
@@ -53,7 +54,8 @@ struct GuildPostRow: View {
                     Text(post.title)
                     HStack {
                         Button(action: {}) {
-                            Text(post.user.username)
+//                            Text(post.user.username)
+                            Text(post.user)
                         }
                         Image(systemName: "arrow.up")
                         Text(String(post.score))

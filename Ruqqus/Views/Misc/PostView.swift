@@ -15,9 +15,9 @@ struct PostView: View {
     
     // data
     let comments: [Comment] = [
-        Comment(post: Post(guild: Guild(name: "test"), user: User(username: "charles"), score: 0, comments: 0, createdAt: "abc", previewURL: "https://b.thumbs.redditmedia.com/lmq9dOfhl7kVOkhETO3V4S8M0Ypuo9UORJ4dKTe5H_Y.jpg",title: "Post title #1", content: "Here is the content"), user: User(username: "charles"), createdAt: "1d", score: 3, content: "Test comment #1"),
-        Comment(post: Post(guild: Guild(name: "test"), user: User(username: "charles"), score: 0, comments: 0, createdAt: "abc", previewURL: "https://b.thumbs.redditmedia.com/lmq9dOfhl7kVOkhETO3V4S8M0Ypuo9UORJ4dKTe5H_Y.jpg",title: "Post title #1", content: "Here is the content"), user: User(username: "charles"), createdAt: "1d", score: 3, content: "Test comment #2"),
-        Comment(post: Post(guild: Guild(name: "test"), user: User(username: "charles"), score: 0, comments: 0, createdAt: "abc", previewURL: "https://b.thumbs.redditmedia.com/lmq9dOfhl7kVOkhETO3V4S8M0Ypuo9UORJ4dKTe5H_Y.jpg",title: "Post title #1", content: "Here is the content"), user: User(username: "charles"), createdAt: "1d", score: 3, content: "Test comment #3")
+//        Comment(post: Post(guild: Guild(name: "test"), user: User(username: "charles"), score: 0, comments: 0, createdAt: "abc", previewURL: "https://b.thumbs.redditmedia.com/lmq9dOfhl7kVOkhETO3V4S8M0Ypuo9UORJ4dKTe5H_Y.jpg",title: "Post title #1", content: "Here is the content"), user: User(username: "charles"), createdAt: "1d", score: 3, content: "Test comment #1"),
+//        Comment(post: Post(guild: Guild(name: "test"), user: User(username: "charles"), score: 0, comments: 0, createdAt: "abc", previewURL: "https://b.thumbs.redditmedia.com/lmq9dOfhl7kVOkhETO3V4S8M0Ypuo9UORJ4dKTe5H_Y.jpg",title: "Post title #1", content: "Here is the content"), user: User(username: "charles"), createdAt: "1d", score: 3, content: "Test comment #2"),
+//        Comment(post: Post(guild: Guild(name: "test"), user: User(username: "charles"), score: 0, comments: 0, createdAt: "abc", previewURL: "https://b.thumbs.redditmedia.com/lmq9dOfhl7kVOkhETO3V4S8M0Ypuo9UORJ4dKTe5H_Y.jpg",title: "Post title #1", content: "Here is the content"), user: User(username: "charles"), createdAt: "1d", score: 3, content: "Test comment #3")
     ]
     
     var body: some View {
@@ -39,11 +39,13 @@ struct PostView: View {
             HStack {
                 Text("in")
                 Button(action: {}) {
-                    Text(post.guild.name)
+//                    Text(post.guild.name)
+                    Text(post.guild)
                 }
                 Text("by")
                 Button(action: {}) {
-                    Text(post.user.username)
+//                    Text(post.user.username)
+                    Text(post.user)
                 }
             }.padding(.horizontal)
             
@@ -100,7 +102,7 @@ struct PostView: View {
                     Image("ellipsis")
                 }
 
-                Button("What") {
+                Button("Sort") {
                     
                 }
             }
@@ -110,9 +112,9 @@ struct PostView: View {
 
 
 
-struct PostView_Previews: PreviewProvider {
-    static var previews: some View {
-        let post = Post(guild: Guild(name: "test"), user: User(username: "charles"), score: 0, comments: 0, createdAt: "abc", previewURL: "https://b.thumbs.redditmedia.com/lmq9dOfhl7kVOkhETO3V4S8M0Ypuo9UORJ4dKTe5H_Y.jpg", title: "Post title #1", content: "Here is the content")
-        return PostView(post: post)
-    }
-}
+//struct PostView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        let post = Post(guild: Guild(name: "test"), user: User(username: "charles"), score: 0, comments: 0, createdAt: "abc", previewURL: "https://b.thumbs.redditmedia.com/lmq9dOfhl7kVOkhETO3V4S8M0Ypuo9UORJ4dKTe5H_Y.jpg", title: "Post title #1", content: "Here is the content")
+//        return PostView(post: post)
+//    }
+//}

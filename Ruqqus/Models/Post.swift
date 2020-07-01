@@ -8,10 +8,10 @@
 
 import SwiftUI
 
-struct Post: Identifiable {
-    var id = UUID()
-    var guild: Guild
-    var user: User
+struct Post: Identifiable, Codable {
+    var id: String = ""
+    var guild: String // Guild
+    var user: String // Useer
     var score: Int
     var comments: Int
     var createdAt: String
