@@ -9,9 +9,11 @@
 import SwiftUI
 
 struct UserView: View {
-    var user: User
+//    var user: User
+    var id: String
     
     var body: some View {
-        Text(user.username)
+//        Text(user.username)
+        Text(id)
     }
 }

@@ -9,16 +9,9 @@
 import SwiftUI
 
 struct GuildView: View {
-    var guild: Guild
+    var id: String
     
     @ObservedObject var fetch = FetchPosts()
-    
-    // data
-//    let posts: [Post] = [
-//        Post(guild: Guild(name: "test"), user: User(username: "charles"), score: 0, comments: 0, createdAt: "1d", previewURL: "https://b.thumbs.redditmedia.com/lmq9dOfhl7kVOkhETO3V4S8M0Ypuo9UORJ4dKTe5H_Y.jpg",title: "Post title #1", content: "Here is the content"),
-//        Post(guild: Guild(name: "test"), user: User(username: "charles"), score: 0, comments: 0, createdAt: "1d", previewURL: "https://b.thumbs.redditmedia.com/lmq9dOfhl7kVOkhETO3V4S8M0Ypuo9UORJ4dKTe5H_Y.jpg",title: "Post title #2", content: "Here is the content"),
-//        Post(guild: Guild(name: "test"), user: User(username: "charles"), score: 0, comments: 0, createdAt: "1d", previewURL: "https://b.thumbs.redditmedia.com/lmq9dOfhl7kVOkhETO3V4S8M0Ypuo9UORJ4dKTe5H_Y.jpg",title: "Post title #3", content: "Here is the content")
-//    ]
     
     var body: some View {
         VStack {
@@ -29,7 +22,7 @@ struct GuildView: View {
                 GuildPostRow(post: post)
             }
         }
-        .navigationBarTitle(guild.name)
+        .navigationBarTitle(id)
     }
 }
 
@@ -43,9 +36,9 @@ class FetchPosts: ObservableObject {
         // TODO:
         let json = """
         [
-            { "id": "1", "guild": "", "user": "", "score": 0, "comments": 0, "createdAt": "1d", "previewURL": "https://b.thumbs.redditmedia.com/lmq9dOfhl7kVOkhETO3V4S8M0Ypuo9UORJ4dKTe5H_Y.jpg", "title": "Post title #3", "content": "Here is the content" },
-            { "id": "2", "guild": "", "user": "", "score": 0, "comments": 0, "createdAt": "1d", "previewURL": "https://b.thumbs.redditmedia.com/lmq9dOfhl7kVOkhETO3V4S8M0Ypuo9UORJ4dKTe5H_Y.jpg", "title": "Post title #3", "content": "Here is the content" },
-            { "id": "3", "guild": "", "user": "", "score": 0, "comments": 0, "createdAt": "1d", "previewURL": "https://b.thumbs.redditmedia.com/lmq9dOfhl7kVOkhETO3V4S8M0Ypuo9UORJ4dKTe5H_Y.jpg", "title": "Post title #3", "content": "Here is the content" }
+            { "id": "1", "guild": "spacex", "user": "charles", "score": 0, "comments": 0, "createdAt": "1d", "previewURL": "https://b.thumbs.redditmedia.com/lmq9dOfhl7kVOkhETO3V4S8M0Ypuo9UORJ4dKTe5H_Y.jpg", "title": "Post title #3", "content": "Here is the content" },
+            { "id": "2", "guild": "spacex", "user": "charles", "score": 0, "comments": 0, "createdAt": "1d", "previewURL": "https://b.thumbs.redditmedia.com/lmq9dOfhl7kVOkhETO3V4S8M0Ypuo9UORJ4dKTe5H_Y.jpg", "title": "Post title #3", "content": "Here is the content" },
+            { "id": "3", "guild": "spacex", "user": "charles", "score": 0, "comments": 0, "createdAt": "1d", "previewURL": "https://b.thumbs.redditmedia.com/lmq9dOfhl7kVOkhETO3V4S8M0Ypuo9UORJ4dKTe5H_Y.jpg", "title": "Post title #3", "content": "Here is the content" }
         ]
         """
         

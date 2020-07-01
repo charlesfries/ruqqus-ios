@@ -74,10 +74,11 @@ struct CommentRow: View {
     var comment: Comment
     
     var body: some View {
-        NavigationLink(destination: UserView(user: comment.user)) {
+        NavigationLink(destination: UserView(id: comment.user)) {
             VStack(alignment: .leading) {
                 HStack {
-                    Text(comment.user.username)
+//                    Text(comment.user.username)
+                    Text(comment.user)
                     Image(systemName: "arrow.up")
                     Text(String(comment.score))
                     Image(systemName: "clock")

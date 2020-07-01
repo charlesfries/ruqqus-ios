@@ -8,10 +8,10 @@
 
 import SwiftUI
 
-struct Comment: Identifiable {
-    var id = UUID()
-    var post: Post
-    var user: User
+struct Comment: Identifiable, Codable {
+    var id: String = ""
+    var post: String // Post
+    var user: String // User
     var createdAt: String
     var score: Int
     var content: String
