@@ -19,7 +19,7 @@ struct FeedView: View {
     ]
     
     var body: some View {
-        ProgressView()
+//        ProgressView()
         List(posts) { post in
             FeedPostRow(post: post)
         }
