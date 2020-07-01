@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct Guild: Identifiable, Codable {
-    var id: String = "" //= UUID()
+    var id: String = ""
+//    var id = UUID()
     var name: String
 }

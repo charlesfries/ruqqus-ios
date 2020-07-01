@@ -10,24 +10,13 @@ import SwiftUI
 
 struct GuildsView: View {
     
-    // data
     let feeds: [Feed] = [
         Feed(name: "Home"),
         Feed(name: "All"),
         Feed(name: "Trending")
     ]
-    let guilds: [Guild] = [
-        Guild(name: "spacex"),
-        Guild(name: "WatchRedditDie"),
-        Guild(name: "DankMemes"),
-        Guild(name: "Apple"),
-        Guild(name: "Videos"),
-        Guild(name: "News"),
-        Guild(name: "Technology"),
-        Guild(name: "videos"),
-        Guild(name: "Programming"),
-        Guild(name: "Politics")
-    ]
+    
+    @ObservedObject var fetch = FetchGuilds()
     
     var body: some View {
         NavigationView {
@@ -41,7 +30,7 @@ struct GuildsView: View {
                     }
                 }
                 Section(header: Text("Guilds")) {
-                    ForEach(guilds) { guild in
+                    ForEach(fetch.guilds) { guild in
                         NavigationLink(destination: GuildView(guild: guild)) {
                             Text(guild.name)
                         }
@@ -50,27 +39,36 @@ struct GuildsView: View {
             }
             
             .navigationBarTitle("Guilds", displayMode: .inline)
-        }.onAppear(perform: fetch)
+        }
         
     }
-    
-    private func fetch() {
+}
+
+class FetchGuilds: ObservableObject {
+    @Published var guilds = [Guild]()
+     
+    init() {
+        // TODO:
         let json = """
         [
-            {
-                "id": "1",
-                "name": "spacex"
-            },
-            {
-                "id": "2",
-                "name": "WatchRedditDie"
-            }
+            { "id": "1", "name": "spacex" },
+            { "id": "2", "name": "WatchRedditDie" },
+            { "id": "3", "name": "DankMemes" },
+            { "id": "4", "name": "Apple" },
+            { "id": "5", "name": "Videos" },
+            { "id": "6", "name": "News" },
+            { "id": "7", "name": "Technology" },
+            { "id": "8", "name": "videos" },
+            { "id": "9", "name": "Programming" },
+            { "id": "10", "name": "Politics" }
         ]
         """
         
         do {
-            let people = try JSONDecoder().decode([Guild].self, from: Data(json.utf8))
-            print(people)
+            let decodedData = try JSONDecoder().decode([Guild].self, from: Data(json.utf8))
+            DispatchQueue.main.async {
+                self.guilds = decodedData
+            }
         } catch {
             print(error)
         }
