@@ -20,11 +20,11 @@ struct GuildsView: View {
         Guild(name: "spacex"),
         Guild(name: "WatchRedditDie"),
         Guild(name: "DankMemes"),
-        Guild(name: "The_Donald"),
+        Guild(name: "Apple"),
         Guild(name: "Videos"),
         Guild(name: "News"),
         Guild(name: "Technology"),
-        Guild(name: "4chan"),
+        Guild(name: "videos"),
         Guild(name: "Programming"),
         Guild(name: "Politics")
     ]
