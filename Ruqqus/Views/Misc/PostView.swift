@@ -122,9 +122,9 @@ class FetchComments: ObservableObject {
         // TODO:
         let json = """
         [
-            { "id": "1", "post": "xyz", "user": "charles", "createdAt": "1d", "score": 3, "content": "Test comment #1" },
-            { "id": "2", "post": "xyz", "user": "charles", "createdAt": "1d", "score": 3, "content": "Test comment #2" },
-            { "id": "3", "post": "xyz", "user": "charles", "createdAt": "1d", "score": 3, "content": "Test comment #3" },
+            { "id": "1", "post": "1", "user": "charles", "createdAt": "1d", "score": 3, "content": "Test comment #1" },
+            { "id": "2", "post": "1", "user": "charles", "createdAt": "1d", "score": 3, "content": "Test comment #2" },
+            { "id": "3", "post": "1", "user": "charles", "createdAt": "1d", "score": 3, "content": "Test comment #3" }
         ]
         """
         

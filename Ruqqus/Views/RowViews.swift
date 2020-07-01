@@ -78,7 +78,9 @@ struct CommentRow: View {
             HStack {
                 NavigationLink(destination: UserView(id: comment.user)) {
                     Text(comment.user)
-                }
+                }.buttonStyle(PlainButtonStyle())
+                Spacer()
+//                Text(comment.user)
                 Image(systemName: "arrow.up")
                 Text(String(comment.score))
                 Image(systemName: "clock")
