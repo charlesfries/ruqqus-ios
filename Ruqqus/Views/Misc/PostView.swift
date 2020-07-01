@@ -11,19 +11,12 @@ import SwiftUI
 struct PostView: View {
     var post: Post
     
+    @State var showSort = false
     @State var showingNewComment = false
     
     @ObservedObject var fetch = FetchComments()
     
-//    let comments: [Comment] = [
-//        Comment(post: Post(guild: Guild(name: "test"), user: User(username: "charles"), score: 0, comments: 0, createdAt: "abc", previewURL: "https://b.thumbs.redditmedia.com/lmq9dOfhl7kVOkhETO3V4S8M0Ypuo9UORJ4dKTe5H_Y.jpg",title: "Post title #1", content: "Here is the content"), user: User(username: "charles"), createdAt: "1d", score: 3, content: "Test comment #1"),
-//        Comment(post: Post(guild: Guild(name: "test"), user: User(username: "charles"), score: 0, comments: 0, createdAt: "abc", previewURL: "https://b.thumbs.redditmedia.com/lmq9dOfhl7kVOkhETO3V4S8M0Ypuo9UORJ4dKTe5H_Y.jpg",title: "Post title #1", content: "Here is the content"), user: User(username: "charles"), createdAt: "1d", score: 3, content: "Test comment #2"),
-//        Comment(post: Post(guild: Guild(name: "test"), user: User(username: "charles"), score: 0, comments: 0, createdAt: "abc", previewURL: "https://b.thumbs.redditmedia.com/lmq9dOfhl7kVOkhETO3V4S8M0Ypuo9UORJ4dKTe5H_Y.jpg",title: "Post title #1", content: "Here is the content"), user: User(username: "charles"), createdAt: "1d", score: 3, content: "Test comment #3")
-//    ]
-    
     var body: some View {
-        
-        
         
         VStack(alignment: .leading) {
             
@@ -39,14 +32,17 @@ struct PostView: View {
             // in/by
             HStack {
                 Text("in")
+                    .foregroundColor(Color("Grey"))
                 NavigationLink(destination: GuildView(id: post.guild)) {
-                    Text(post.guild)
+                    Text("+\(post.guild)")
                 }
                 Text("by")
+                    .foregroundColor(Color("Grey"))
                 NavigationLink(destination: UserView(id: post.user)) {
                     Text(post.user)
                 }
-            }.padding(.horizontal)
+            }
+            .padding(.horizontal)
             
             // context
             HStack {
@@ -56,7 +52,9 @@ struct PostView: View {
                 Text(String(post.comments))
                 Image(systemName: "clock")
                 Text(post.createdAt)
-            }.padding(.horizontal)
+            }
+            .padding(.horizontal)
+            .foregroundColor(Color("Grey"))
             
             Divider()
             
@@ -101,41 +99,25 @@ struct PostView: View {
         .navigationBarItems(trailing:
             HStack {
                 Button(action: {}) {
-                    Image("ellipsis")
+                    Image(systemName: "ellipsis")
                 }
 
-                Button("Sort") {
-                    
+                Button(action: {
+                    self.showSort = true
+                }) {
+                    Image(systemName: "arrow.up.arrow.down")
                 }
             }
         )
-    }
-}
-
-class FetchComments: ObservableObject {
-    @Published var comments = [Comment]()
-    @Published var loading = false
-     
-    init() {
-        self.loading = true
+        .navigationBarTitle("\(fetch.comments.count) Comments")
         
-        // TODO:
-        let json = """
-        [
-            { "id": "1", "post": "1", "user": "charles", "createdAt": "1d", "score": 3, "content": "Test comment #1" },
-            { "id": "2", "post": "1", "user": "charles", "createdAt": "1d", "score": 3, "content": "Test comment #2" },
-            { "id": "3", "post": "1", "user": "charles", "createdAt": "1d", "score": 3, "content": "Test comment #3" }
-        ]
-        """
-        
-        do {
-            let decodedData = try JSONDecoder().decode([Comment].self, from: Data(json.utf8))
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { // TODO:
-                self.comments = decodedData
-                self.loading = false
-            }
-        } catch {
-            print(error)
+        .actionSheet(isPresented: $showSort) {
+            ActionSheet(title: Text("Sort"), buttons: [
+                .default(Text("Best")),
+                .default(Text("Top")),
+                .default(Text("Controversial")),
+                .cancel()
+            ])
         }
     }
 }

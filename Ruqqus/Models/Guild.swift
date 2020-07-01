@@ -13,3 +13,38 @@ struct Guild: Identifiable, Codable {
 //    var id = UUID()
     var name: String
 }
+
+class FetchGuilds: ObservableObject {
+    @Published var guilds = [Guild]()
+    @Published var loading = false
+     
+    init() {
+        self.loading = true
+        
+        // TODO:
+        let json = """
+        [
+            { "id": "1", "name": "spacex" },
+            { "id": "2", "name": "WatchRedditDie" },
+            { "id": "3", "name": "DankMemes" },
+            { "id": "4", "name": "Apple" },
+            { "id": "5", "name": "Videos" },
+            { "id": "6", "name": "News" },
+            { "id": "7", "name": "Technology" },
+            { "id": "8", "name": "videos" },
+            { "id": "9", "name": "Programming" },
+            { "id": "10", "name": "Politics" }
+        ]
+        """
+        
+        do {
+            let decodedData = try JSONDecoder().decode([Guild].self, from: Data(json.utf8))
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { // TODO:
+                self.guilds = decodedData
+                self.loading = false
+            }
+        } catch {
+            print(error)
+        }
+    }
+}

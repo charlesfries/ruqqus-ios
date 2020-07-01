@@ -23,8 +23,8 @@ struct FeedPostRow: View {
                     Text(post.title)
                     HStack {
                         Button(action: {}) {
-//                            Text(post.guild.name)
-                            Text(post.guild)
+                            Text("+\(post.guild)")
+                                .foregroundColor(Color("Purple"))
                         }
                         Image(systemName: "arrow.up")
                         Text(String(post.score))
@@ -54,8 +54,8 @@ struct GuildPostRow: View {
                     Text(post.title)
                     HStack {
                         Button(action: {}) {
-//                            Text(post.user.username)
                             Text(post.user)
+                                .foregroundColor(Color("Purple"))
                         }
                         Image(systemName: "arrow.up")
                         Text(String(post.score))
@@ -63,7 +63,7 @@ struct GuildPostRow: View {
                         Text(String(post.comments))
                         Image(systemName: "clock")
                         Text(post.createdAt)
-                    }
+                    }.foregroundColor(Color("Grey"))
                 }
             }
         }
