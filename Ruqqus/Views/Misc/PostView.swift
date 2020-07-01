@@ -90,6 +90,9 @@ struct PostView: View {
             Divider()
             
             // comments
+            if fetch.loading {
+                ProgressView()
+            }
             List(fetch.comments) { comment in
                 CommentRow(comment: comment)
             }
