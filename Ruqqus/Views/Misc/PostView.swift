@@ -13,7 +13,6 @@ struct PostView: View {
     
     @State var showSort = false
     @State var showingNewComment = false
-    @State private var isLoading = false
     
     @ObservedObject var fetch = FetchComments()
     
