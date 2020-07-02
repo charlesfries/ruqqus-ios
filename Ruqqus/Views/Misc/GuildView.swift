@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct GuildView: View {
-    var id: String
+    var guild: String
     
     @ObservedObject var fetch = FetchPosts()
     
@@ -23,6 +23,6 @@ struct GuildView: View {
                 GuildPostRow(post: post)
             }
         }
-        .navigationBarTitle(id)
+        .navigationBarTitle(guild)
     }
 }
