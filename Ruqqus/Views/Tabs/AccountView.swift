@@ -11,8 +11,6 @@ import SwiftUI
 struct AccountView: View {
     var body: some View {
         NavigationView {
-//            Text("Account")
-//            .navigationBarTitle("Account", displayMode: .inline)
             
             List {
                 HStack {
@@ -31,22 +29,19 @@ struct AccountView: View {
                         Text("Account Age")
                     }.frame(minWidth: 0, maxWidth: .infinity)
                 }.padding()
-//                Section(header: Text("Feeds")) {
-//                    ForEach(feeds) { feed in
-//                        NavigationLink(destination: FeedView(feed: feed)) {
-//                            Text(feed.name)
-//                        }
-//                    }
-//                }
-//                Section(header: Text("Guilds")) {
-//                    ForEach(fetch.guilds) { guild in
-//                        NavigationLink(destination: GuildView(id: guild.id)) {
-//                            Text(guild.name)
-//                        }
-//                    }
-//                }
-            }.listStyle(GroupedListStyle())
+                
+                Section {
+                    NavigationLink(destination: FeedView(feed: Feed(name: "All"))) {
+                        Text("Posts")
+                    }
+                    NavigationLink(destination: FeedView(feed: Feed(name: "All"))) {
+                        Text("Comments")
+                    }
+                }
+                
+            }
             
+            .listStyle(GroupedListStyle())
             .navigationBarTitle("captainmeta4", displayMode: .inline)
         }
     }
