@@ -89,7 +89,7 @@ struct PostView: View {
             
             // comments
             if fetch.loading {
-                ProgressView()
+                ActivityIndicator(startAnimating: $fetch.loading)
             }
             List(fetch.comments) { comment in
                 CommentRow(comment: comment)

@@ -22,7 +22,7 @@ struct GuildsView: View {
         NavigationView {
             
             if fetch.loading {
-                ProgressView()
+                ActivityIndicator(startAnimating: $fetch.loading)
             }
             
             List {
