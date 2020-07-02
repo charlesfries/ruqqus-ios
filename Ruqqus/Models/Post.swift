@@ -30,9 +30,9 @@ class FetchPosts: ObservableObject {
         // TODO:
         let json = """
         [
-            { "id": "1", "guild": "spacex", "user": "charles", "score": 0, "comments": 0, "createdAt": "1d", "previewURL": "https://b.thumbs.redditmedia.com/lmq9dOfhl7kVOkhETO3V4S8M0Ypuo9UORJ4dKTe5H_Y.jpg", "title": "Post title #3", "content": "Here is the content" },
-            { "id": "2", "guild": "spacex", "user": "charles", "score": 0, "comments": 0, "createdAt": "1d", "previewURL": "https://b.thumbs.redditmedia.com/lmq9dOfhl7kVOkhETO3V4S8M0Ypuo9UORJ4dKTe5H_Y.jpg", "title": "Post title #3", "content": "Here is the content" },
-            { "id": "3", "guild": "spacex", "user": "charles", "score": 0, "comments": 0, "createdAt": "1d", "previewURL": "https://b.thumbs.redditmedia.com/lmq9dOfhl7kVOkhETO3V4S8M0Ypuo9UORJ4dKTe5H_Y.jpg", "title": "Post title #3", "content": "Here is the content" }
+            { "id": "1", "guild": "spacex", "user": "captainmeta4", "score": 0, "comments": 0, "createdAt": "1d", "previewURL": "https://b.thumbs.redditmedia.com/lmq9dOfhl7kVOkhETO3V4S8M0Ypuo9UORJ4dKTe5H_Y.jpg", "title": "Post title #3", "content": "Here is the content" },
+            { "id": "2", "guild": "spacex", "user": "captainmeta4", "score": 0, "comments": 0, "createdAt": "1d", "previewURL": "https://b.thumbs.redditmedia.com/lmq9dOfhl7kVOkhETO3V4S8M0Ypuo9UORJ4dKTe5H_Y.jpg", "title": "Post title #3", "content": "Here is the content" },
+            { "id": "3", "guild": "spacex", "user": "captainmeta4", "score": 0, "comments": 0, "createdAt": "1d", "previewURL": "https://b.thumbs.redditmedia.com/lmq9dOfhl7kVOkhETO3V4S8M0Ypuo9UORJ4dKTe5H_Y.jpg", "title": "Post title #3", "content": "Here is the content" }
         ]
         """
         
