@@ -28,6 +28,7 @@
 		776FC87A24A02AC60091F6A9 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776FC87924A02AC60091F6A9 /* UserView.swift */; };
 		776FC87C24A02CBC0091F6A9 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776FC87B24A02CBC0091F6A9 /* Comment.swift */; };
 		776FC87E24A0395B0091F6A9 /* NewCommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776FC87D24A0395B0091F6A9 /* NewCommentView.swift */; };
+		93C25B4024AD55E0002BC464 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C25B3F24AD55E0002BC464 /* ActivityIndicator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		776FC87924A02AC60091F6A9 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		776FC87B24A02CBC0091F6A9 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		776FC87D24A0395B0091F6A9 /* NewCommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCommentView.swift; sourceTree = "<group>"; };
+		93C25B3F24AD55E0002BC464 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 				776FC87524A02AB20091F6A9 /* PostView.swift */,
 				776FC87924A02AC60091F6A9 /* UserView.swift */,
 				776FC87D24A0395B0091F6A9 /* NewCommentView.swift */,
+				93C25B3F24AD55E0002BC464 /* ActivityIndicator.swift */,
 			);
 			path = Misc;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 			files = (
 				776FC87624A02AB20091F6A9 /* PostView.swift in Sources */,
 				776FC87424A024CE0091F6A9 /* User.swift in Sources */,
+				93C25B4024AD55E0002BC464 /* ActivityIndicator.swift in Sources */,
 				776FC86E24A0238A0091F6A9 /* FeedView.swift in Sources */,
 				776FC87A24A02AC60091F6A9 /* UserView.swift in Sources */,
 				776FC86224A01CBF0091F6A9 /* Guild.swift in Sources */,

@@ -14,10 +14,12 @@ struct FeedView: View {
     @ObservedObject var fetch = FetchPosts()
     
     var body: some View {
-        VStack { // TODO: needed for ProgressView
+        VStack {
+            
             if fetch.loading {
-                ProgressView()
+                ActivityIndicator(startAnimating: $fetch.loading)
             }
+            
             List(fetch.posts) { post in
                 FeedPostRow(post: post)
             }

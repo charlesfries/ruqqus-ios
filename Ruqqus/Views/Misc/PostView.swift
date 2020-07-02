@@ -13,6 +13,7 @@ struct PostView: View {
     
     @State var showSort = false
     @State var showingNewComment = false
+    @State private var isLoading = false
     
     @ObservedObject var fetch = FetchComments()
     
@@ -89,7 +90,7 @@ struct PostView: View {
             
             // comments
             if fetch.loading {
-                ProgressView()
+                ActivityIndicator(startAnimating: $fetch.loading)
             }
             List(fetch.comments) { comment in
                 CommentRow(comment: comment)

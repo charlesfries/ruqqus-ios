@@ -17,12 +17,13 @@ struct GuildsView: View {
     ]
     
     @ObservedObject var fetch = FetchGuilds()
+    @State private var isLoading = true
     
     var body: some View {
         NavigationView {
             
             if fetch.loading {
-                ProgressView()
+                ActivityIndicator(startAnimating: self.$isLoading)
             }
             
             List {
