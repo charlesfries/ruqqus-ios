@@ -76,9 +76,7 @@ struct PostView: View {
                         .font(.title)
                 }
                 Spacer()
-                Button(action: {
-                    self.showingNewComment.toggle()
-                }) {
+                Button(action: { self.showingNewComment.toggle() }) {
                     Image(systemName: "arrowshape.turn.up.left")
                         .font(.title)
                 }.sheet(isPresented: $showingNewComment) {
@@ -92,6 +90,7 @@ struct PostView: View {
             }
             .padding(.vertical)
             .foregroundColor(Color("Purple"))
+            .buttonStyle(BorderlessButtonStyle())
             
             // COMMENTS
             if fetch.loading {

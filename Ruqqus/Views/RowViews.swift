@@ -16,7 +16,7 @@ struct FeedPostRow: View {
             HStack(alignment: .top) {
                 Image("PostPreview")
                     .resizable()
-                    .frame(width: 56, height: 56)
+                    .frame(width: 60, height: 60)
                     .cornerRadius(5)
                 
                 VStack(alignment: .leading) {
@@ -32,10 +32,11 @@ struct FeedPostRow: View {
                         Text(String(post.comments))
                         Image(systemName: "clock")
                         Text(post.createdAt)
-                    }
+                        Image(systemName: "ellipsis")
+                    }.foregroundColor(Color("Grey")).padding(0)
                 }
             }
-        }
+        }.padding(.vertical, 5)
     }
 }
 
@@ -98,6 +99,7 @@ struct CommentRow: View {
 
 struct RowViews_Previews: PreviewProvider {
     static var previews: some View {
-        CommentRow(comment: Comment(post: "123", user: "charles", createdAt: "1d", score: 0, content: "Hello, world!"))
+        FeedPostRow(post: Post(guild: "spacex", user: "charles", score: 0, comments: 0, createdAt: "1d", previewURL: "", title: "The Title", content: "The Content"))
+//        CommentRow(comment: Comment(post: "123", user: "charles", createdAt: "1d", score: 0, content: "Hello, world!"))
     }
 }
