@@ -24,7 +24,7 @@ struct ContentView: View {
                 Text("Trending")
             }
             GuildsView().tabItem {
-                Image("guild-icon")
+                Image(systemName: "flag.circle.fill")
                 Text("Guilds")
             }
             ExploreView().tabItem {
