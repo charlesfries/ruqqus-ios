@@ -145,8 +145,8 @@
 			children = (
 				776FC85D24A01A9F0091F6A9 /* GuildsView.swift */,
 				93C25B4224AD745E002BC464 /* HomeView.swift */,
+				776FC86524A020290091F6A9 /* AccountView.swift */,
 				93C25B4424AD785E002BC464 /* NewsView.swift */,
-				93C25B4624AD788F002BC464 /* TrendingView.swift */,
 				93C25B4824AD78B5002BC464 /* ExploreView.swift */,
 			);
 			path = Tabs;
@@ -168,9 +168,9 @@
 		93C25B4124AD742D002BC464 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
-				776FC86524A020290091F6A9 /* AccountView.swift */,
 				776FC86724A021120091F6A9 /* SearchView.swift */,
 				776FC86924A0211C0091F6A9 /* SettingsView.swift */,
+				93C25B4624AD788F002BC464 /* TrendingView.swift */,
 			);
 			path = Pages;
 			sourceTree = "<group>";

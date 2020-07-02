@@ -19,9 +19,13 @@ struct ContentView: View {
                 Image(systemName: "globe")
                 Text("News")
             }
-            TrendingView().tabItem {
-                Image(systemName: "flame.fill")
-                Text("Trending")
+//            TrendingView().tabItem {
+//                Image(systemName: "flame.fill")
+//                Text("Trending")
+//            }
+            AccountView().tabItem {
+                Image(systemName: "person")
+                Text("Account")
             }
             GuildsView().tabItem {
                 Image(systemName: "flag.circle.fill")
