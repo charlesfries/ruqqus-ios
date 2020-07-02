@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct Explore: View {
+struct ExploreView: View {
     var body: some View {
         NavigationView {
             Text("Explore")

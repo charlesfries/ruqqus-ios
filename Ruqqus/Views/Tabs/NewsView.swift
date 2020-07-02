@@ -12,7 +12,7 @@ struct NewsView: View {
     var body: some View {
         NavigationView {
             Text("News")
-            .navigationBarTitle("Account", displayMode: .inline)
+            .navigationBarTitle("News", displayMode: .inline)
         }
     }
 }

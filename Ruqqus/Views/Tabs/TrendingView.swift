@@ -12,7 +12,7 @@ struct TrendingView: View {
     var body: some View {
         NavigationView {
             Text("Trending")
-            .navigationBarTitle("Account", displayMode: .inline)
+            .navigationBarTitle("Home", displayMode: .inline)
         }
     }
 }

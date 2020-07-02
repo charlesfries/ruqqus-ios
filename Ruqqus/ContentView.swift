@@ -15,22 +15,22 @@ struct ContentView: View {
                 Image(systemName: "house.fill")
                 Text("Home")
             }
+            NewsView().tabItem {
+                Image(systemName: "globe")
+                Text("News")
+            }
+            TrendingView().tabItem {
+                Image(systemName: "flame.fill")
+                Text("Trending")
+            }
             GuildsView().tabItem {
                 Image("guild-icon")
                 Text("Guilds")
             }
-            AccountView().tabItem {
-                Image(systemName: "person")
-                Text("Account")
+            ExploreView().tabItem {
+                Image(systemName: "safari.fill")
+                Text("Explore")
             }
-//            SearchView().tabItem {
-//                Image(systemName: "magnifyingglass")
-//                Text("Search")
-//            }
-//            SettingsView().tabItem {
-//                Image(systemName: "gear")
-//                Text("Settings")
-//            }
         }.accentColor(Color("Purple"))
     }
 }
