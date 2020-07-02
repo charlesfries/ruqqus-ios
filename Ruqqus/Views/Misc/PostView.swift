@@ -18,47 +18,52 @@ struct PostView: View {
     
     var body: some View {
         
-        VStack(alignment: .leading) {
+        List {
             
-            // title
-            Text(post.title)
-                .padding(.horizontal)
-                .font(.title)
-            
-            // content
-            Text(post.content)
-                .padding(.horizontal)
-            
-            // in/by
-            HStack {
-                Text("in")
-                    .foregroundColor(Color("Grey"))
-                NavigationLink(destination: GuildView(id: post.guild)) {
-                    Text("+\(post.guild)")
+            // TOP
+            VStack(alignment: .leading) {
+                
+                // title
+                Text(post.title)
+                    .font(.headline)
+                    .padding(.bottom)
+                
+                // content
+                Text(post.content)
+                    .padding(.bottom)
+                
+                // in/by
+                HStack {
+                    Text("in").foregroundColor(Color("Grey"))
+//                    NavigationLink(destination: GuildView(id: post.guild)) {
+//                        Text("+\(post.guild)")
+//                    }
+                    Button(action: {}) {
+                        Text("+\(post.guild)")
+                    }.foregroundColor(Color("Purple"))
+                    Text("by").foregroundColor(Color("Grey"))
+//                    NavigationLink(destination: UserView(id: post.user)) {
+//                        Text(post.user)
+//                    }
+                    Button(action: {}) {
+                        Text(post.user)
+                    }.foregroundColor(Color("Purple"))
                 }
-                Text("by")
-                    .foregroundColor(Color("Grey"))
-                NavigationLink(destination: UserView(id: post.user)) {
-                    Text(post.user)
+                
+                // context
+                HStack {
+                    Image(systemName: "arrow.up")
+                    Text(String(post.score))
+                    Image(systemName: "message")
+                    Text(String(post.comments))
+                    Image(systemName: "clock")
+                    Text(post.createdAt)
                 }
+                .foregroundColor(Color("Grey"))
             }
-            .padding(.horizontal)
+            .padding(.vertical)
             
-            // context
-            HStack {
-                Image(systemName: "arrow.up")
-                Text(String(post.score))
-                Image(systemName: "message")
-                Text(String(post.comments))
-                Image(systemName: "clock")
-                Text(post.createdAt)
-            }
-            .padding(.horizontal)
-            .foregroundColor(Color("Grey"))
-            
-            Divider()
-            
-            // actions
+            // ACTIONS
             HStack {
                 Button(action: {}) {
                     Image(systemName: "arrow.up")
@@ -83,15 +88,15 @@ struct PostView: View {
                     Image(systemName: "square.and.arrow.up")
                         .font(.title)
                 }
-            }.padding()
+            }
+            .padding(.vertical)
+            .foregroundColor(Color("Purple"))
             
-            Divider()
-            
-            // comments
+            // COMMENTS
             if fetch.loading {
                 ActivityIndicator(startAnimating: $fetch.loading)
             }
-            List(fetch.comments) { comment in
+            ForEach(fetch.comments) { comment in
                 CommentRow(comment: comment)
             }
         }
@@ -112,19 +117,20 @@ struct PostView: View {
         .navigationBarTitle("\(fetch.comments.count) Comments")
         
         .actionSheet(isPresented: $showSort) {
-            ActionSheet(title: Text("Sort"), buttons: [
-                .default(Text("Best")),
+            ActionSheet(title: Text("Sort By"), buttons: [
                 .default(Text("Top")),
+                .default(Text("Best")),
+                .default(Text("New")),
                 .default(Text("Controversial")),
+                .default(Text("Old")),
                 .cancel()
             ])
         }
     }
 }
 
-//struct PostView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        let post = Post(guild: Guild(name: "test"), user: User(username: "charles"), score: 0, comments: 0, createdAt: "abc", previewURL: "https://b.thumbs.redditmedia.com/lmq9dOfhl7kVOkhETO3V4S8M0Ypuo9UORJ4dKTe5H_Y.jpg", title: "Post title #1", content: "Here is the content")
-//        return PostView(post: post)
-//    }
-//}
+struct PostView_Previews: PreviewProvider {
+    static var previews: some View {
+        return PostView(post: Post(guild: "spacex", user: "charles", score: 0, comments: 0, createdAt: "1d", previewURL: "", title: "The Title", content: "The Content"))
+    }
+}
