@@ -11,7 +11,8 @@ import SwiftUI
 struct PostView: View {
     var post: Post
     
-    @State var showSort = false
+    @State var showingSort = false
+    @State var showingInfo = false
     @State var showingNewComment = false
     
     @ObservedObject var fetch = FetchComments()
@@ -103,29 +104,46 @@ struct PostView: View {
         
         .navigationBarItems(trailing:
             HStack {
-                Button(action: {}) {
+                
+                // sort
+                Button(action: { self.showingSort = true }) {
+                    Image(systemName: "arrow.up.arrow.down")
+                }
+                
+                .actionSheet(isPresented: $showingSort) {
+                    ActionSheet(title: Text("Sort By"), buttons: [
+                        .default(Text("Top")),
+                        .default(Text("Best")),
+                        .default(Text("New")),
+                        .default(Text("Controversial")),
+                        .default(Text("Old")),
+                        .cancel()
+                    ])
+                }
+                
+                // info
+                Button(action: { self.showingInfo = true }) {
                     Image(systemName: "ellipsis")
                 }
-
-                Button(action: {
-                    self.showSort = true
-                }) {
-                    Image(systemName: "arrow.up.arrow.down")
+                .actionSheet(isPresented: $showingInfo) {
+                    ActionSheet(title: Text("Info"), buttons: [
+                        .default(Text("Upvote")),
+                        .default(Text("Downvote")),
+                        .default(Text("Reply")),
+                        .default(Text(post.user)),
+                        .default(Text(post.guild)),
+                        .default(Text("Share")),
+                        .default(Text("Report")),
+                        .cancel()
+                    ])
                 }
             }
         )
         .navigationBarTitle("\(fetch.comments.count) Comments")
         
-        .actionSheet(isPresented: $showSort) {
-            ActionSheet(title: Text("Sort By"), buttons: [
-                .default(Text("Top")),
-                .default(Text("Best")),
-                .default(Text("New")),
-                .default(Text("Controversial")),
-                .default(Text("Old")),
-                .cancel()
-            ])
-        }
+        
+        
+        
     }
 }
 

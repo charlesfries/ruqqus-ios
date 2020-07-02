@@ -72,22 +72,32 @@ struct GuildPostRow: View {
 
 struct CommentRow: View {
     var comment: Comment
+    @State private var action: Int? = 0
     
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                NavigationLink(destination: UserView(id: comment.user)) {
-                    Text(comment.user)
-                }.buttonStyle(PlainButtonStyle())
+                Button(action: { self.action = 1 }) {
+                    Text(comment.user).foregroundColor(Color("Purple"))
+                }
+                
+                Image(systemName: "arrow.up").foregroundColor(Color("Grey"))
+                Text(String(comment.score)).foregroundColor(Color("Grey"))
                 Spacer()
-//                Text(comment.user)
-                Image(systemName: "arrow.up")
-                Text(String(comment.score))
-                Image(systemName: "clock")
-                Text(comment.createdAt)
+                Text(comment.createdAt).foregroundColor(Color("Grey"))
             }
             Text(comment.content)
+            
+            NavigationLink(destination: UserView(id: comment.user), tag: 1, selection: $action) {
+                EmptyView()
+            }
         }
     }
     
+}
+
+struct RowViews_Previews: PreviewProvider {
+    static var previews: some View {
+        CommentRow(comment: Comment(post: "123", user: "charles", createdAt: "1d", score: 0, content: "Hello, world!"))
+    }
 }
