@@ -6,4 +6,13 @@
 //  Copyright © 2020 Charles Fries. All rights reserved.
 //
 
-import Foundation
+import SwiftUI
+
+struct HomeView: View {
+    var body: some View {
+        NavigationView {
+            Text("Hone")
+            .navigationBarTitle("Account", displayMode: .inline)
+        }
+    }
+}

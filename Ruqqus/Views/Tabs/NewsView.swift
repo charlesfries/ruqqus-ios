@@ -1,17 +1,17 @@
 //
-//  AccountView.swift
+//  NewsView.swift
 //  Ruqqus
 //
-//  Created by Charles Fries on 6/21/20.
+//  Created by Chris Larsen on 7/1/20.
 //  Copyright © 2020 Charles Fries. All rights reserved.
 //
 
 import SwiftUI
 
-struct AccountView: View {
+struct NewsView: View {
     var body: some View {
         NavigationView {
-            Text("Account")
+            Text("News")
             .navigationBarTitle("Account", displayMode: .inline)
         }
     }

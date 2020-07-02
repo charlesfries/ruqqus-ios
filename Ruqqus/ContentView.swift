@@ -11,22 +11,26 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         TabView {
+            HomeView().tabItem {
+                Image(systemName: "house.fill")
+                Text("Home")
+            }
             GuildsView().tabItem {
-                Image(systemName: "flame")
+                Image("guild-icon")
                 Text("Guilds")
             }
             AccountView().tabItem {
                 Image(systemName: "person")
                 Text("Account")
             }
-            SearchView().tabItem {
-                Image(systemName: "magnifyingglass")
-                Text("Search")
-            }
-            SettingsView().tabItem {
-                Image(systemName: "gear")
-                Text("Settings")
-            }
+//            SearchView().tabItem {
+//                Image(systemName: "magnifyingglass")
+//                Text("Search")
+//            }
+//            SettingsView().tabItem {
+//                Image(systemName: "gear")
+//                Text("Settings")
+//            }
         }.accentColor(Color("Purple"))
     }
 }
