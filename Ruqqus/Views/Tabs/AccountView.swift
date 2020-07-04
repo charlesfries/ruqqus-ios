@@ -9,10 +9,14 @@
 import SwiftUI
 
 struct AccountView: View {
+    @ObservedObject var fetch = FetchPosts()
+    
     var body: some View {
         NavigationView {
             
             List {
+                
+                // stats
                 HStack {
                     VStack {
                         Text("7.3k").font(.title)
@@ -30,12 +34,20 @@ struct AccountView: View {
                     }.frame(minWidth: 0, maxWidth: .infinity)
                 }.padding()
                 
+                // types
                 Section {
                     NavigationLink(destination: FeedView(feed: Feed(name: "All"))) {
                         Text("Posts")
                     }
                     NavigationLink(destination: FeedView(feed: Feed(name: "All"))) {
                         Text("Comments")
+                    }
+                }
+                
+                // overview
+                Section(header: Text("Overview")) {
+                    ForEach(fetch.posts) { post in
+                        PostRow(isFeed: true, post: post)
                     }
                 }
                 
