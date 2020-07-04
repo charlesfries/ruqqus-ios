@@ -8,7 +8,8 @@
 
 import SwiftUI
 
-struct FeedPostRow: View {
+struct PostRow: View {
+    var isFeed: Bool
     var post: Post
 
     var body: some View {
@@ -22,9 +23,16 @@ struct FeedPostRow: View {
                 VStack(alignment: .leading) {
                     Text(post.title)
                     HStack {
-                        Button(action: {}) {
-                            Text("+\(post.guild)")
-                                .foregroundColor(Color("Purple"))
+                        if isFeed {
+                            Button(action: {}) {
+                                Text("+\(post.guild)")
+                                    .foregroundColor(Color("Purple"))
+                            }
+                        } else {
+                            Button(action: {}) {
+                                Text(post.user)
+                                    .foregroundColor(Color("Purple"))
+                            }
                         }
                         Image(systemName: "arrow.up")
                         Text(String(post.score))
@@ -33,41 +41,13 @@ struct FeedPostRow: View {
                         Image(systemName: "clock")
                         Text(post.createdAt)
                         Image(systemName: "ellipsis")
-                    }.foregroundColor(Color("Grey")).padding(0)
+                    }
+                    .foregroundColor(Color("Grey"))
+                    .padding(0)
+                    .font(.system(size: 14))
                 }
             }
         }.padding(.vertical, 5)
-    }
-}
-
-struct GuildPostRow: View {
-    var post: Post
-
-    var body: some View {
-        NavigationLink(destination: PostView(post: post)) {
-            HStack(alignment: .top) {
-                Image("PostPreview")
-                    .resizable()
-                    .frame(width: 56, height: 56)
-                    .cornerRadius(5)
-                
-                VStack(alignment: .leading) {
-                    Text(post.title)
-                    HStack {
-                        Button(action: {}) {
-                            Text(post.user)
-                                .foregroundColor(Color("Purple"))
-                        }
-                        Image(systemName: "arrow.up")
-                        Text(String(post.score))
-                        Image(systemName: "message")
-                        Text(String(post.comments))
-                        Image(systemName: "clock")
-                        Text(post.createdAt)
-                    }.foregroundColor(Color("Grey"))
-                }
-            }
-        }
     }
 }
 
@@ -99,7 +79,7 @@ struct CommentRow: View {
 
 struct RowViews_Previews: PreviewProvider {
     static var previews: some View {
-        FeedPostRow(post: Post(guild: "spacex", user: "charles", score: 0, comments: 0, createdAt: "1d", previewURL: "", title: "The Title", content: "The Content"))
+        PostRow(isFeed: true, post: Post(guild: "spacex", user: "charles", score: 0, comments: 0, createdAt: "1d", previewURL: "", title: "The Title", content: "The Content"))
 //        CommentRow(comment: Comment(post: "123", user: "charles", createdAt: "1d", score: 0, content: "Hello, world!"))
     }
 }

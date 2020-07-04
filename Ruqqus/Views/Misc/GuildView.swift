@@ -22,7 +22,7 @@ struct GuildView: View {
             }
             
             List(fetch.posts) { post in
-                GuildPostRow(post: post)
+                PostRow(isFeed: false, post: post)
             }
         }
         .navigationBarTitle(guild)

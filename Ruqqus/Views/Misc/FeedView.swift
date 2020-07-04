@@ -23,7 +23,7 @@ struct FeedView: View {
             }
             
             List(fetch.posts) { post in
-                FeedPostRow(post: post)
+                PostRow(isFeed: true, post: post)
             }
         }
         .navigationBarTitle(feed.name)
