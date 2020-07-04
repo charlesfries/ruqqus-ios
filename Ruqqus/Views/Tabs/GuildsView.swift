@@ -35,7 +35,7 @@ struct GuildsView: View {
                 }
                 Section(header: Text("Guilds")) {
                     ForEach(fetch.guilds) { guild in
-                        NavigationLink(destination: GuildView(id: guild.id)) {
+                        NavigationLink(destination: GuildView(guild: guild.name)) {
                             Text(guild.name)
                         }
                     }

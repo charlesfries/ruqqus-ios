@@ -23,7 +23,7 @@ class FetchUser: ObservableObject {
         
         // TODO:
         let json = """
-        { "id": "1", "username": "charles" }
+        { "id": "1", "username": "captainmeta4" }
         """
         
         do {
