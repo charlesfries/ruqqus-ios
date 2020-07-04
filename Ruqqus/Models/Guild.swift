@@ -39,7 +39,7 @@ class FetchGuilds: ObservableObject {
         
         do {
             let decodedData = try JSONDecoder().decode([Guild].self, from: Data(json.utf8))
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { // TODO:
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { // TODO:
                 self.guilds = decodedData
                 self.loading = false
             }

@@ -19,12 +19,13 @@ struct GuildView: View {
         VStack {
             if fetch.loading {
                 ActivityIndicator(startAnimating: $fetch.loading)
-            }
-            
-            List(fetch.posts) { post in
-                PostRow(isFeed: false, post: post)
+            } else {
+                List(fetch.posts) { post in
+                    PostRow(isFeed: false, post: post)
+                }
             }
         }
+        
         .navigationBarTitle(guild)
         .navigationBarItems(trailing:
             HStack {

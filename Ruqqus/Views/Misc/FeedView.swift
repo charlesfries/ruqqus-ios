@@ -17,17 +17,16 @@ struct FeedView: View {
     
     var body: some View {
         VStack {
-            
             if fetch.loading {
                 ActivityIndicator(startAnimating: $fetch.loading)
-            }
-            
-            List(fetch.posts) { post in
-                PostRow(isFeed: true, post: post)
+            } else {
+                List(fetch.posts) { post in
+                    PostRow(isFeed: true, post: post)
+                }
             }
         }
-        .navigationBarTitle(feed.name)
         
+        .navigationBarTitle(feed.name)
         .navigationBarItems(trailing:
             HStack {
                 
