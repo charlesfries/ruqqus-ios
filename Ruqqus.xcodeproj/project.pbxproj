@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		775BC19024B123720089E57F /* NewPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775BC18F24B123720089E57F /* NewPostView.swift */; };
 		776FC84A24A019350091F6A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776FC84924A019350091F6A9 /* AppDelegate.swift */; };
 		776FC84C24A019350091F6A9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776FC84B24A019350091F6A9 /* SceneDelegate.swift */; };
 		776FC84E24A019350091F6A9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776FC84D24A019350091F6A9 /* ContentView.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		775BC18F24B123720089E57F /* NewPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostView.swift; sourceTree = "<group>"; };
 		776FC84624A019350091F6A9 /* Ruqqus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ruqqus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		776FC84924A019350091F6A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		776FC84B24A019350091F6A9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +79,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		775BC19124B124BD0089E57F /* _Other */ = {
+			isa = PBXGroup;
+			children = (
+				93C25B4824AD78B5002BC464 /* ExploreView.swift */,
+				93C25B4424AD785E002BC464 /* NewsView.swift */,
+				93C25B4224AD745E002BC464 /* HomeView.swift */,
+				93C25B4624AD788F002BC464 /* TrendingView.swift */,
+			);
+			path = _Other;
+			sourceTree = "<group>";
+		};
 		776FC83D24A019350091F6A9 = {
 			isa = PBXGroup;
 			children = (
@@ -120,10 +133,10 @@
 		776FC85F24A01AD30091F6A9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				93C25B4124AD742D002BC464 /* Pages */,
 				776FC86B24A023770091F6A9 /* Tabs */,
 				776FC86C24A0237F0091F6A9 /* Misc */,
 				776FC86F24A024890091F6A9 /* RowViews.swift */,
+				775BC19124B124BD0089E57F /* _Other */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -144,10 +157,9 @@
 			isa = PBXGroup;
 			children = (
 				776FC85D24A01A9F0091F6A9 /* GuildsView.swift */,
-				93C25B4224AD745E002BC464 /* HomeView.swift */,
 				776FC86524A020290091F6A9 /* AccountView.swift */,
-				93C25B4424AD785E002BC464 /* NewsView.swift */,
-				93C25B4824AD78B5002BC464 /* ExploreView.swift */,
+				776FC86724A021120091F6A9 /* SearchView.swift */,
+				776FC86924A0211C0091F6A9 /* SettingsView.swift */,
 			);
 			path = Tabs;
 			sourceTree = "<group>";
@@ -159,20 +171,11 @@
 				776FC87724A02ABC0091F6A9 /* GuildView.swift */,
 				776FC87524A02AB20091F6A9 /* PostView.swift */,
 				776FC87924A02AC60091F6A9 /* UserView.swift */,
+				775BC18F24B123720089E57F /* NewPostView.swift */,
 				776FC87D24A0395B0091F6A9 /* NewCommentView.swift */,
 				93C25B3F24AD55E0002BC464 /* ActivityIndicator.swift */,
 			);
 			path = Misc;
-			sourceTree = "<group>";
-		};
-		93C25B4124AD742D002BC464 /* Pages */ = {
-			isa = PBXGroup;
-			children = (
-				776FC86724A021120091F6A9 /* SearchView.swift */,
-				776FC86924A0211C0091F6A9 /* SettingsView.swift */,
-				93C25B4624AD788F002BC464 /* TrendingView.swift */,
-			);
-			path = Pages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,6 +264,7 @@
 				776FC84C24A019350091F6A9 /* SceneDelegate.swift in Sources */,
 				776FC86824A021120091F6A9 /* SearchView.swift in Sources */,
 				93C25B4724AD788F002BC464 /* TrendingView.swift in Sources */,
+				775BC19024B123720089E57F /* NewPostView.swift in Sources */,
 				776FC84E24A019350091F6A9 /* ContentView.swift in Sources */,
 				93C25B4324AD745E002BC464 /* HomeView.swift in Sources */,
 				776FC86624A020290091F6A9 /* AccountView.swift in Sources */,

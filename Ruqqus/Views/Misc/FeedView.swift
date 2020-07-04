@@ -12,7 +12,8 @@ struct FeedView: View {
     var feed: Feed
     
     @ObservedObject var fetch = FetchPosts()
-    @State var showSort = false
+    @State var showingSort = false
+    @State var showingInfo = false
     
     var body: some View {
         VStack {
@@ -28,24 +29,38 @@ struct FeedView: View {
         .navigationBarTitle(feed.name)
         
         .navigationBarItems(trailing:
-            Button(action: {
-                self.showSort = true
-            }) {
-                Image(systemName: "arrow.up.arrow.down")
+            HStack {
+                
+                // sort
+                Button(action: { self.showingSort = true }) {
+                    Image(systemName: "arrow.up.arrow.down")
+                }
+                
+                .actionSheet(isPresented: $showingSort) {
+                    ActionSheet(title: Text("Sort By"), buttons: [
+                        .default(Text("Best")),
+                        .default(Text("Hot")),
+                        .default(Text("Top")),
+                        .default(Text("New")),
+                        .default(Text("Rising")),
+                        .default(Text("Controversial")),
+                        .cancel()
+                    ])
+                }
+                
+                // info
+                Button(action: { self.showingInfo = true }) {
+                    Image(systemName: "ellipsis")
+                }
+                .actionSheet(isPresented: $showingInfo) {
+                    ActionSheet(title: Text("Info"), buttons: [
+                        .default(Text("Share")),
+                        .cancel()
+                    ])
+                }
             }
         )
         
-        .actionSheet(isPresented: $showSort) {
-            ActionSheet(title: Text("Sort By"), buttons: [
-                .default(Text("Best")),
-                .default(Text("Hot")),
-                .default(Text("Top")),
-                .default(Text("New")),
-                .default(Text("Rising")),
-                .default(Text("Controversial")),
-                .cancel()
-            ])
-        }
     }
 }
 
