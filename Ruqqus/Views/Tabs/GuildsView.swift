@@ -43,8 +43,10 @@ struct GuildsView: View {
                             HStack {
                                 Text(guild.name)
                                 Spacer()
-                                Image(systemName: "star.fill")
-                                    .foregroundColor(Color("Purple"))
+                                Button(action: { /*guild.isFavorited?.toggle()*/ }) {
+                                    Image(systemName: "star.fill")
+                                        .foregroundColor(Color("Purple"))
+                                }.buttonStyle(PlainButtonStyle())
                             }
                             NavigationLink(destination: GuildView(guild: guild.name)) {}
                         }
@@ -59,7 +61,7 @@ struct GuildsView: View {
                                 Button(action: { /*guild.isFavorited?.toggle()*/ }) {
                                     Image(systemName: "star.fill")
                                         .foregroundColor(Color("LightGrey"))
-                                }
+                                }.buttonStyle(PlainButtonStyle())
                                 
                             }
                             NavigationLink(destination: GuildView(guild: guild.name)) {}
