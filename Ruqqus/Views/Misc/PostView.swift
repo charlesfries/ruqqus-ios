@@ -50,6 +50,7 @@ struct PostView: View {
                         Text(post.user)
                     }.foregroundColor(Color("Purple"))
                 }
+                .font(.system(size: 14))
                 
                 // context
                 HStack {
@@ -61,6 +62,7 @@ struct PostView: View {
                     Text(post.createdAt)
                 }
                 .foregroundColor(Color("Grey"))
+                .font(.system(size: 14))
             }
             .padding(.vertical)
             
