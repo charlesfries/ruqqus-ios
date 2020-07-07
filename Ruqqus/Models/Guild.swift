@@ -12,6 +12,7 @@ struct Guild: Identifiable, Codable {
     var id: String = ""
 //    var id = UUID()
     var name: String
+    var isFavorited: Bool? = false
 }
 
 class FetchGuilds: ObservableObject {

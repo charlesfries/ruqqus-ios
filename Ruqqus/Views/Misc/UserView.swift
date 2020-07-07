@@ -9,10 +9,10 @@
 import SwiftUI
 
 struct UserView: View {
-    var id: String
+    var username: String
     @ObservedObject var fetch = FetchUser()
     
     var body: some View {
-        Text(fetch.user.username)
+        Text(username)
     }
 }
