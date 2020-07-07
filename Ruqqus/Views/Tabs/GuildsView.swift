@@ -58,7 +58,7 @@ struct GuildsView: View {
                                 Spacer()
                                 Button(action: { /*guild.isFavorited?.toggle()*/ }) {
                                     Image(systemName: "star.fill")
-                                        .foregroundColor(Color("Grey"))
+                                        .foregroundColor(Color("LightGrey"))
                                 }
                                 
                             }
