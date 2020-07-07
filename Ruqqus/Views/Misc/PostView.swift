@@ -101,6 +101,8 @@ struct PostView: View {
             }
         }
         
+        .navigationBarTitle("\(fetch.comments.count) Comments")
+        
         .navigationBarItems(trailing:
             HStack {
                 
@@ -138,10 +140,6 @@ struct PostView: View {
                 }
             }
         )
-        .navigationBarTitle("\(fetch.comments.count) Comments")
-        
-        
-        
         
     }
 }
