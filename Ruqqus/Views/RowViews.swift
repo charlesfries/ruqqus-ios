@@ -58,7 +58,7 @@ struct PostRow: View {
 
 struct CommentRow: View {
     var comment: Comment
-    var isMini: Bool = true
+    var isMini: Bool = false
     @State private var action: Int? = 0
     
     var body: some View {
