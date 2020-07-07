@@ -21,7 +21,7 @@ struct FeedView: View {
                 ActivityIndicator(startAnimating: $fetch.loading)
             } else {
                 List(fetch.posts) { post in
-                    PostRow(isFeed: true, post: post)
+                    PostRow(post: post, isFeed: true)
                 }
             }
         }

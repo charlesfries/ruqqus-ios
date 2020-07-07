@@ -47,7 +47,7 @@ struct AccountView: View {
                 // overview
                 Section(header: Text("Overview")) {
                     ForEach(fetch.posts) { post in
-                        PostRow(isFeed: true, post: post)
+                        PostRow(post: post, isFeed: true)
                     }
                 }
                 
