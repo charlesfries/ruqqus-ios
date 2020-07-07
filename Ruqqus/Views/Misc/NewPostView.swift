@@ -10,7 +10,15 @@ import SwiftUI
 
 struct NewPostView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            Text("New Post")
+            .navigationBarTitle("Submit Post", displayMode: .inline)
+            .navigationBarItems(
+                leading: Button(action: {}) { Text("Cancel") },
+                trailing: Button(action: {}) { Text("Post") }
+            )
+        }
+        .accentColor(Color("Purple"))
     }
 }
 

@@ -21,7 +21,7 @@
 		776FC86824A021120091F6A9 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776FC86724A021120091F6A9 /* SearchView.swift */; };
 		776FC86A24A0211C0091F6A9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776FC86924A0211C0091F6A9 /* SettingsView.swift */; };
 		776FC86E24A0238A0091F6A9 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776FC86D24A0238A0091F6A9 /* FeedView.swift */; };
-		776FC87024A024890091F6A9 /* RowViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776FC86F24A024890091F6A9 /* RowViews.swift */; };
+		776FC87024A024890091F6A9 /* PostRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776FC86F24A024890091F6A9 /* PostRow.swift */; };
 		776FC87224A024A30091F6A9 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776FC87124A024A30091F6A9 /* Post.swift */; };
 		776FC87424A024CE0091F6A9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776FC87324A024CE0091F6A9 /* User.swift */; };
 		776FC87624A02AB20091F6A9 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776FC87524A02AB20091F6A9 /* PostView.swift */; };
@@ -29,6 +29,7 @@
 		776FC87A24A02AC60091F6A9 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776FC87924A02AC60091F6A9 /* UserView.swift */; };
 		776FC87C24A02CBC0091F6A9 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776FC87B24A02CBC0091F6A9 /* Comment.swift */; };
 		776FC87E24A0395B0091F6A9 /* NewCommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776FC87D24A0395B0091F6A9 /* NewCommentView.swift */; };
+		77739C0D24B4301B00EA7EC1 /* CommentRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77739C0C24B4301B00EA7EC1 /* CommentRow.swift */; };
 		93C25B4024AD55E0002BC464 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C25B3F24AD55E0002BC464 /* ActivityIndicator.swift */; };
 		93C25B4324AD745E002BC464 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C25B4224AD745E002BC464 /* HomeView.swift */; };
 		93C25B4524AD785E002BC464 /* NewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C25B4424AD785E002BC464 /* NewsView.swift */; };
@@ -53,7 +54,7 @@
 		776FC86724A021120091F6A9 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		776FC86924A0211C0091F6A9 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		776FC86D24A0238A0091F6A9 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
-		776FC86F24A024890091F6A9 /* RowViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowViews.swift; sourceTree = "<group>"; };
+		776FC86F24A024890091F6A9 /* PostRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRow.swift; sourceTree = "<group>"; };
 		776FC87124A024A30091F6A9 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		776FC87324A024CE0091F6A9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		776FC87524A02AB20091F6A9 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
@@ -61,6 +62,7 @@
 		776FC87924A02AC60091F6A9 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		776FC87B24A02CBC0091F6A9 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		776FC87D24A0395B0091F6A9 /* NewCommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCommentView.swift; sourceTree = "<group>"; };
+		77739C0C24B4301B00EA7EC1 /* CommentRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentRow.swift; sourceTree = "<group>"; };
 		93C25B3F24AD55E0002BC464 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		93C25B4224AD745E002BC464 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		93C25B4424AD785E002BC464 /* NewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsView.swift; sourceTree = "<group>"; };
@@ -135,7 +137,7 @@
 			children = (
 				776FC86B24A023770091F6A9 /* Tabs */,
 				776FC86C24A0237F0091F6A9 /* Misc */,
-				776FC86F24A024890091F6A9 /* RowViews.swift */,
+				77739C0B24B4300A00EA7EC1 /* Rows */,
 				775BC19124B124BD0089E57F /* _Other */,
 			);
 			path = Views;
@@ -176,6 +178,15 @@
 				93C25B3F24AD55E0002BC464 /* ActivityIndicator.swift */,
 			);
 			path = Misc;
+			sourceTree = "<group>";
+		};
+		77739C0B24B4300A00EA7EC1 /* Rows */ = {
+			isa = PBXGroup;
+			children = (
+				776FC86F24A024890091F6A9 /* PostRow.swift */,
+				77739C0C24B4301B00EA7EC1 /* CommentRow.swift */,
+			);
+			path = Rows;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,6 +271,7 @@
 				776FC87C24A02CBC0091F6A9 /* Comment.swift in Sources */,
 				776FC86424A01DB50091F6A9 /* Feed.swift in Sources */,
 				776FC87224A024A30091F6A9 /* Post.swift in Sources */,
+				77739C0D24B4301B00EA7EC1 /* CommentRow.swift in Sources */,
 				776FC84A24A019350091F6A9 /* AppDelegate.swift in Sources */,
 				776FC84C24A019350091F6A9 /* SceneDelegate.swift in Sources */,
 				776FC86824A021120091F6A9 /* SearchView.swift in Sources */,
@@ -269,7 +281,7 @@
 				93C25B4324AD745E002BC464 /* HomeView.swift in Sources */,
 				776FC86624A020290091F6A9 /* AccountView.swift in Sources */,
 				776FC85E24A01A9F0091F6A9 /* GuildsView.swift in Sources */,
-				776FC87024A024890091F6A9 /* RowViews.swift in Sources */,
+				776FC87024A024890091F6A9 /* PostRow.swift in Sources */,
 				776FC87E24A0395B0091F6A9 /* NewCommentView.swift in Sources */,
 				776FC86A24A0211C0091F6A9 /* SettingsView.swift in Sources */,
 				776FC87824A02ABC0091F6A9 /* GuildView.swift in Sources */,

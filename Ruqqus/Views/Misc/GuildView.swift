@@ -14,6 +14,7 @@ struct GuildView: View {
     @ObservedObject var fetch = FetchPosts()
     @State var showingSort = false
     @State var showingInfo = false
+    @State var showingNewComment = false
     
     var body: some View {
         VStack {
@@ -21,7 +22,7 @@ struct GuildView: View {
                 ActivityIndicator(startAnimating: $fetch.loading)
             } else {
                 List(fetch.posts) { post in
-                    PostRow(isFeed: false, post: post)
+                    PostRow(post: post, isFeed: false)
                 }
             }
         }
@@ -53,11 +54,15 @@ struct GuildView: View {
                 }
                 .actionSheet(isPresented: $showingInfo) {
                     ActionSheet(title: Text("Info"), buttons: [
-                        .default(Text("Submit Post")),
+                        .default(Text("Submit Post"), action: { self.showingNewComment.toggle() }),
                         .default(Text("Subscribe")),
                         .default(Text("Share")),
                         .cancel()
                     ])
+                }
+                
+                .sheet(isPresented: $showingNewComment) {
+                    NewPostView()
                 }
             }
         )
