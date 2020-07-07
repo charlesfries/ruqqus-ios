@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct GuildView: View {
-    var guild: String
+    var name: String
     
     @ObservedObject var fetch = FetchPosts()
     @State var showingSort = false
@@ -26,7 +26,7 @@ struct GuildView: View {
             }
         }
         
-        .navigationBarTitle(guild)
+        .navigationBarTitle(name)
         .navigationBarItems(trailing:
             HStack {
                 

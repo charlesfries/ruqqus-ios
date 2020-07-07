@@ -48,7 +48,7 @@ struct GuildsView: View {
                                         .foregroundColor(Color("Purple"))
                                 }.buttonStyle(PlainButtonStyle())
                             }
-                            NavigationLink(destination: GuildView(guild: guild.name)) {}
+                            NavigationLink(destination: GuildView(name: guild.name)) {}
                         }
                     }
                 }
@@ -64,7 +64,7 @@ struct GuildsView: View {
                                 }.buttonStyle(PlainButtonStyle())
                                 
                             }
-                            NavigationLink(destination: GuildView(guild: guild.name)) {}
+                            NavigationLink(destination: GuildView(name: guild.name)) {}
                         }
                     }
                 }

@@ -11,6 +11,9 @@ import SwiftUI
 struct PostRow: View {
     var isFeed: Bool
     var post: Post
+    
+    @State private var action: Int? = 0
+    @State private var action2: Int? = 0
 
     var body: some View {
         NavigationLink(destination: PostView(post: post)) {
@@ -24,15 +27,17 @@ struct PostRow: View {
                     Text(post.title)
                     HStack {
                         if isFeed {
-                            Button(action: {}) {
+                            Button(action: { self.action = 1 }) {
                                 Text("+\(post.guild)")
                                     .foregroundColor(Color("Purple"))
-                            }
+                            }.buttonStyle(PlainButtonStyle())
+                            NavigationLink(destination: GuildView(name: post.guild), tag: 1, selection: $action) {}
                         } else {
-                            Button(action: {}) {
+                            Button(action: { self.action = 1 }) {
                                 Text(post.user)
                                     .foregroundColor(Color("Purple"))
                             }
+                            NavigationLink(destination: UserView(username: post.user), tag: 2, selection: $action2) {}
                         }
                         Image(systemName: "arrow.up")
                         Text(String(post.score))
@@ -69,7 +74,7 @@ struct CommentRow: View {
             }
             Text(comment.content)
             
-            NavigationLink(destination: UserView(id: comment.user), tag: 1, selection: $action) {
+            NavigationLink(destination: UserView(username: comment.user), tag: 1, selection: $action) {
                 EmptyView()
             }
         }
