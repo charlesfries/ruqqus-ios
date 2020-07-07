@@ -33,6 +33,7 @@ struct CommentRow: View {
                 EmptyView()
             }
         }
+        .font(.system(size: 15))
     }
 }
 

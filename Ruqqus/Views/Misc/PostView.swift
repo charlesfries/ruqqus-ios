@@ -50,7 +50,7 @@ struct PostView: View {
                         Text(post.user)
                     }.foregroundColor(Color("Purple"))
                 }
-                .font(.system(size: 14))
+                .font(.system(size: 15))
                 
                 // context
                 HStack {
@@ -62,9 +62,10 @@ struct PostView: View {
                     Text(post.createdAt)
                 }
                 .foregroundColor(Color("Grey"))
-                .font(.system(size: 14))
+                .font(.system(size: 15))
             }
-            .padding(.vertical)
+            .padding(.vertical, 8.0)
+            .buttonStyle(BorderlessButtonStyle())
             
             // ACTIONS
             HStack {

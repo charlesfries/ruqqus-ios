@@ -49,7 +49,7 @@ struct PostRow: View {
                     }
                     .foregroundColor(Color("Grey"))
                     .padding(0)
-                    .font(.system(size: 14))
+                    .font(.system(size: 15))
                 }
             }
         }.padding(.vertical, 5)
