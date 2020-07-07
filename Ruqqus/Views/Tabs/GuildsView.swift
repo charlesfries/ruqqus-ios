@@ -18,6 +18,10 @@ struct GuildsView: View {
     
     @ObservedObject var fetch = FetchGuilds()
     
+    var favoritedGuilds: [Guild] {
+        return fetch.guilds.filter { ($0.isFavorited ?? false) }
+    }
+    
     var body: some View {
         NavigationView {
             
@@ -33,10 +37,32 @@ struct GuildsView: View {
                         }
                     }
                 }
+                Section(header: Text("Favorites")) {
+                    ForEach(favoritedGuilds) { guild in
+                        ZStack {
+                            HStack {
+                                Text(guild.name)
+                                Spacer()
+                                Image(systemName: "star.fill")
+                                    .foregroundColor(Color("Purple"))
+                            }
+                            NavigationLink(destination: GuildView(guild: guild.name)) {}
+                        }
+                    }
+                }
                 Section(header: Text("Guilds")) {
                     ForEach(fetch.guilds) { guild in
-                        NavigationLink(destination: GuildView(guild: guild.name)) {
-                            Text(guild.name)
+                        ZStack {
+                            HStack {
+                                Text(guild.name)
+                                Spacer()
+                                Button(action: { /*guild.isFavorited?.toggle()*/ }) {
+                                    Image(systemName: "star.fill")
+                                        .foregroundColor(Color("Grey"))
+                                }
+                                
+                            }
+                            NavigationLink(destination: GuildView(guild: guild.name)) {}
                         }
                     }
                 }
@@ -48,4 +74,8 @@ struct GuildsView: View {
     }
 }
 
-
+struct GuildsView_Previews: PreviewProvider {
+    static var previews: some View {
+        GuildsView()
+    }
+}
